@@ -1,0 +1,45 @@
+.todoForm {
+    width: 100%;
+}
+
+.todo-input {
+    outline: none;
+    border: 1px solid var(--theme-color);
+    background: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 13px;
+    width: 80%;
+    color: #000000;
+}
+
+.todo-input::placeholder {
+    color: #000000;
+    font-size: 13px;
+}
+
+.todo-btn {
+    background: var(--theme-color);
+    color: var(--text-color);
+    width: 20%;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px){
+
+    .todo-input {
+        width: 70%;
+        font-size: 10px;
+    }
+
+    .todo-btn {
+        width: 30%;
+        font-size: 10px;
+    }
+
+  }
