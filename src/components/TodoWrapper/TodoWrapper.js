@@ -45,43 +45,33 @@ const TodoWrapper = () => {
     }
 
     const toggleComplete = (id) => {
-      const updatedTodos = todos.map((todo) => {
-        if (todo.id === id) {
-          todo.completed = !todo.completed;
-        }
-        return todo;
-      });
+      const updatedTodos = todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      );
       setTodos(updatedTodos);
       localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
 
     const editForm = (id) => {
-      const updatedTodos = todos.map((todo) => {
-        if (todo.id === id) {
-          todo.isEditing = !todo.isEditing;
-        }
-        return todo;
-      });
+      const updatedTodos = todos.map((todo) => 
+        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+      );
       setTodos(updatedTodos);
       localStorage.setItem('todos', JSON.stringify(updatedTodos));
-    }
+    };
 
     const editTask = (id, value) => {
       if (value.trim().length > 0) {
-      const updatedTodos = todos.map((todo) => {
-        if (todo.id === id) {
-          const capitalisedValue = value.charAt(0).toUpperCase() + value.slice(1);
-          todo.task = capitalisedValue;
-          todo.isEditing = !todo.isEditing;
-        }
-        return todo;
-      });
+      const updatedTodos = todos.map((todo) => 
+        todo.id === id ? { ...todo, task: value.charAt(0).toUpperCase() + value.slice(1), isEditing: !todo.isEditing } : todo
+      );
       setTodos(updatedTodos);
       localStorage.setItem('todos', JSON.stringify(updatedTodos));
-    } else {
-      alert("Enter a Valid Task")
-    }
-    }
+
+      } else {
+        alert("Enter a Valid Task");
+      }
+    };
 
     const modeSwitch = () => {
       const body = document.querySelector("body");
@@ -90,7 +80,7 @@ const TodoWrapper = () => {
       const isDarkMode = body.classList.contains("dark");
       mode.textContent = isDarkMode ? "Light Mode" : "Dark Mode";
       localStorage.setItem('mode', isDarkMode ? "Dark Mode" : "Light Mode");
-    }
+    };
 
   return (
     <div>
@@ -98,16 +88,16 @@ const TodoWrapper = () => {
           <h1>Get Things Done!</h1>
           <TodoForm addTodo={addTodo}/>
           {todos.map((todo) => todo.isEditing ? (
-            <TodoEditForm todo={todo} editTask={editTask}/>) 
+            <TodoEditForm key={todo.id} todo={todo} editTask={editTask}/>) 
             : (
-            <Todo todo={todo} deleteTodo={deleteTodo} editForm={editForm} toggleComplete={toggleComplete} />)
+            <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} editForm={editForm} toggleComplete={toggleComplete}/>)
           )}
       </div>
-      <div class="mode-switch" onClick={modeSwitch}>
+      <div className="mode-switch" onClick={modeSwitch}>
         Dark Mode
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TodoWrapper;
