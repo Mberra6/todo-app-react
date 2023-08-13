@@ -19,3 +19,48 @@
     color: var(--completed-color);
     text-decoration: line-through;
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+    .todo {
+        padding: 0.4rem 1rem;
+        font-size: 15px;
+    }
+}
+
+/* Extra Small Devices */
+@media (min-width: 481px) and (max-width: 767px) {
+      
+}
+
+/* Small Tablets */
+@media (min-width: 767px) and (max-width: 991px) {
+    .todo {
+        padding: 0.6rem 1rem;
+        font-size: 20px;
+    }
+}
+
+/* Large Tablets/Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .todo {
+        padding: 0.8rem 1rem;
+        font-size: 25px;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1918px) {
+    .todo {
+        padding: 0.6rem 1rem;
+        font-size: 20px;
+    }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1919px) {
+    .todo {
+        padding: 0.8rem 1rem;
+        font-size: 30px;
+    }
+}

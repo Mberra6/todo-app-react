@@ -30,16 +30,107 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1024px){
-
+/* Mobile */
+@media (max-width: 480px) {
     .todo-input {
         width: 70%;
         font-size: 10px;
+        padding: 0.4rem 1rem;
+    }
+
+    .todo-input::placeholder {
+        font-size: 12px;
     }
 
     .todo-btn {
         width: 30%;
         font-size: 10px;
+        padding: 0.4rem;
+        font-weight: 700;
+    }
+}
+
+/* Extra Small Devices */
+@media (min-width: 481px) and (max-width: 767px) {
+      
+}
+
+/* Small Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .todo-input {
+        width: 75%;
+        font-size: 15px;
+        padding: 0.6rem 1rem;
     }
 
-  }
+    .todo-input::placeholder {
+        font-size: 15px;
+    }
+
+    .todo-btn {
+        width: 25%;
+        font-size: 15px;
+        padding: 0.6rem;
+        font-weight: 700;
+    }
+}
+
+/* Large Tablets/Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .todo-input {
+        width: 75%;
+        font-size: 20px;
+        padding: 0.8rem 1rem;
+    }
+
+    .todo-input::placeholder {
+        font-size: 20px;
+    }
+
+    .todo-btn {
+        width: 25%;
+        font-size: 20px;
+        padding: 0.8rem;
+        font-weight: 700;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1918px) {
+    .todo-input {
+        width: 75%;
+        font-size: 16px;
+        padding: 0.5rem 1rem;
+    }
+
+    .todo-input::placeholder {
+        font-size: 16px;
+    }
+
+    .todo-btn {
+        width: 25%;
+        font-size: 16px;
+        padding: 0.5rem;
+        font-weight: 700;
+    }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1919px) {
+    .todo-input {
+        width: 75%;
+        font-size: 25px;
+        padding: 0.8rem 1rem;
+    }
+
+    .todo-input::placeholder {
+        font-size: 25px;
+    }
+
+    .todo-btn {
+        width: 25%;
+        font-size: 25px;
+        padding: 0.8rem;
+        font-weight: 700;
+    }
+}

@@ -13,7 +13,7 @@ function TodoEditForm(props) {
   return (
     <form className='editForm' onSubmit={handleSubmit}>
         <input type="text" placeholder="Update Task" className='edit-input' value={value} onChange={(e) => setValue(e.target.value)}></input>
-        <button type="submit" className='edit-btn'>Update Task</button>
+        <button type="submit" className='edit-btn'>Update</button>
     </form>
   )
 }
