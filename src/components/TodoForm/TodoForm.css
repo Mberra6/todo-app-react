@@ -15,13 +15,13 @@
 }
 
 .todo-input::placeholder {
-    color: #000000;
+    color: var(--theme-color);
     font-size: 13px;
 }
 
 .todo-btn {
-    background: var(--theme-color);
-    color: var(--text-color);
+    background: var(--button-text-color);
+    color: var(--button-text-color);
     width: 20%;
     font-size: 13px;
     font-weight: 700;
