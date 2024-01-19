@@ -9,12 +9,13 @@
 
 :root {
   --primary-color: #1F51FF;
-  --white-color: #fff;
-  --button-color: #242526;
-  --theme-color: #fcfbfb;
-  --text-color: #000000;
-  --button-text-color: #fcfbfb;
+  --background-color: #fff;
+  --mode-button-color: #242526;
+  --input-color: #fcfbfb;
+  --text-color: #242526;
+  --mode-button-text-color: #fcfbfb;
   --completed-color: gray;
+  --shadow-color: #00000059;
 }
 
 body {
@@ -24,21 +25,22 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--white-color);
+  background-color: var(--background-color);
 }
 
 body.dark {
-  --primary-color: #242526;
-  --white-color: #18191a;
-  --button-color: #fff;
-  --theme-color: #fff;
+  --primary-color: #18191a;
+  --background-color: #242526;
+  --mode-button-color: #fff;
+  --input-color: #fcfbfb;
   --text-color: #242526;
-  --button-text-color: #242526;
+  --mode-button-text-color: #242526;
   --completed-color: gray;
+  --shadow-color: #959da533;
 }
 
 h1 {
-  color: var(--theme-color);
+  color: var(--input-color);
   font-weight: 700;
 }
 

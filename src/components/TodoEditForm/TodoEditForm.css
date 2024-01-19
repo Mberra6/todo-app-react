@@ -4,30 +4,35 @@
 
 .edit-input {
     outline: none;
-    border: 1px solid var(--theme-color);
+    border: 1px solid var(--input-color);
     background: none;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 13px;
     width: 75%;
-    color: var(--theme-color);
+    color: var(--input-color);
 }
 
 .edit-input::placeholder {
-    color: var(--theme-color);
+    color: var(--input-color);
     font-size: 13px;
 }
 
 .edit-btn {
-    background: var(--theme-color);
-    color: var(--text-color);
+    background: transparent;
+    color: var(--input-color);
     width: 25%;
     font-size: 13px;
     font-weight: 700;
-    border: 1px solid transparent;
+    border: 1px solid var(--input-color);
     padding: 0.5rem;
     cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: var(--input-color);
+    color: var(--primary-color);
 }
 
 /* Mobile */
