@@ -32,13 +32,13 @@ body.dark {
   --white-color: #18191a;
   --button-color: #fff;
   --theme-color: #fff;
-  --text-color: #242526;
+  --text-color: #fff;
   --button-text-color: #242526;
   --completed-color: gray;
 }
 
 h1 {
-  color: var(--button-text-color);
+  color: var(--text-color);
   font-weight: 700;
 }
 
