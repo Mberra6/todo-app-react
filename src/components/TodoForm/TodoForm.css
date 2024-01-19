@@ -11,7 +11,7 @@
     margin-bottom: 1rem;
     font-size: 13px;
     width: 80%;
-    color: #000000;
+    color: var(--theme-color);
 }
 
 .todo-input::placeholder {
@@ -20,7 +20,7 @@
 }
 
 .todo-btn {
-    background: var(--button-text-color);
+    background: var(--button-color);
     color: var(--button-text-color);
     width: 20%;
     font-size: 13px;
