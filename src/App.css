@@ -10,7 +10,7 @@
 :root {
   --primary-color: #1F51FF;
   --white-color: #fff;
-  --button-color: #1F51FF;
+  --button-color: #242526;
   --theme-color: #fcfbfb;
   --text-color: #000000;
   --button-text-color: #fcfbfb;
@@ -32,7 +32,7 @@ body.dark {
   --white-color: #18191a;
   --button-color: #fff;
   --theme-color: #fff;
-  --text-color: #18191a;
+  --text-color: #242526;
   --button-text-color: #242526;
   --completed-color: gray;
 }

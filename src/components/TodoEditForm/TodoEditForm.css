@@ -21,7 +21,7 @@
 
 .edit-btn {
     background: var(--theme-color);
-    color: var(--button-text-color);
+    color: var(--text-color);
     width: 25%;
     font-size: 13px;
     font-weight: 700;
