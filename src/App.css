@@ -28,13 +28,13 @@ body {
 }
 
 body.dark {
-  --primary-color: #0FFF50;
-  --white-color: #000000;
-  --button-color: #FAFA33;
-  --theme-color: #FAFA33;
-  --text-color: #7F00FF;
-  --button-text-color: #7F00FF;
-  --completed-color: #c5aeff;
+  --primary-color: #242526;
+  --white-color: #18191a;
+  --button-color: #fff;
+  --theme-color: #fff;
+  --text-color: #242526;
+  --button-text-color: #242526;
+  --completed-color: gray;
 }
 
 h1 {
