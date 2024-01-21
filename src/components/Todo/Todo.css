@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: var(--input-color);
-    color: var(--text-color);
+    background: var(--primary);
+    color: var(--surface);
     padding: 0.75rem 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -13,6 +13,10 @@
 
 .editIcon {
     margin-right: 0.75rem;
+}
+
+.icons {
+    color: var(--on-primary);
 }
 
 .completed {

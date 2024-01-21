@@ -8,14 +8,19 @@
 }
 
 :root {
-  --primary-color: #1F51FF;
-  --background-color: #fff;
-  --mode-button-color: #242526;
-  --input-color: #fcfbfb;
-  --text-color: #242526;
-  --mode-button-text-color: #fcfbfb;
+  --primary: #6200EE;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --secondary-variant: #018786;
+  --background: #FFFFFF;
+  --surface: #FFFFFF;
+  --error: #B00020;
+  --on-primary: #FFFFFF;
+  --on-secondary: #000000;
+  --on-background: #000000;
+  --on-surface: #000000;
+  --on-error: #FFFFFF;
   --completed-color: gray;
-  --shadow-color: #00000059;
 }
 
 body {
@@ -25,22 +30,26 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--background-color);
+  background-color: var(--background);
 }
 
 body.dark {
-  --primary-color: #18191a;
-  --background-color: #242526;
-  --mode-button-color: #fff;
-  --input-color: #fcfbfb;
-  --text-color: #242526;
-  --mode-button-text-color: #242526;
+  --primary: #BB86FC;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --background: #121212;
+  --surface: #222222;
+  --error: #CF6679;
+  --on-primary: #000000;
+  --on-secondary: #000000;
+  --on-background: #FFFFFF;
+  --on-surface: #FFFFFF;
+  --on-error: #000000;
   --completed-color: gray;
-  --shadow-color: #959da533;
 }
 
 h1 {
-  color: var(--input-color);
+  color: var(--on-surface);
   font-weight: 700;
 }
 
