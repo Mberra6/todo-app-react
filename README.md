@@ -10,7 +10,7 @@ This React Todo List Application allows users to manage their tasks efficiently 
 - **Dark/Light Mode:** Users can switch between dark and light modes to suit their visual preference. The application remembers the user's mode choice.
 
 ## Live Demo
-Access the live version of the todo list application [here](https://main.d1rz5umfkn6qqv.amplifyapp.com)
+Access the live version of the application [here](https://main.d1rz5umfkn6qqv.amplifyapp.com)
 
 ## Using the Application
 - **Add a Task:** Enter a task in the input field and click the "Add Task" button.
