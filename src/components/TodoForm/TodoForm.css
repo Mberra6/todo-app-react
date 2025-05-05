@@ -50,17 +50,18 @@
 /* Mobile */
 @media (max-width: 480px) {
     .todo-input {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.5rem 1rem;
     }
 
     .todo-input::placeholder {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .todo-btn {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.5rem;
+        width: 30%;
     }
 }
 
