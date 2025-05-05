@@ -7,7 +7,11 @@ import TodoEditForm from '../TodoEditForm/TodoEditForm';
 
 
 const TodoWrapper = () => {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(() => {
+      const saved = localStorage.getItem('todos');
+      return saved ? JSON.parse(saved) : [];
+    });
+    const [editingTodo, setEditingTodo] = useState(null);
 
     useEffect(() => {
       if (localStorage.getItem('mode') === "Dark Mode") {
@@ -16,22 +20,22 @@ const TodoWrapper = () => {
         body.classList.add('dark');
         mode.textContent = 'Light Mode';
       }
-      const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
-      setTodos(savedTodos);
     }, []);
+
+    useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
 
     const addTodo = (value) => {
       const newTodo = {
         id: uuidv4(),
         task: value.trim(),
-        completed: false,
-        isEditing: false
+        completed: false
       };
 
       if (newTodo.task.length > 0) {
         newTodo.task = newTodo.task.charAt(0).toUpperCase() + newTodo.task.slice(1);
         setTodos([...todos, newTodo]);
-        localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
 
       } else {
         alert("Enter a Valid Task");
@@ -41,7 +45,6 @@ const TodoWrapper = () => {
     const deleteTodo = (id) => {
       const updatedTodos = todos.filter((todo) => todo.id !== id);
       setTodos(updatedTodos);
-      localStorage.setItem('todos', JSON.stringify(updatedTodos));
     }
 
     const toggleComplete = (id) => {
@@ -49,24 +52,20 @@ const TodoWrapper = () => {
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       );
       setTodos(updatedTodos);
-      localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
 
     const editForm = (id) => {
-      const updatedTodos = todos.map((todo) => 
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
-      );
-      setTodos(updatedTodos);
-      localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      const todoToEdit = todos.find((todo) => todo.id === id);
+      setEditingTodo(todoToEdit);
     };
 
     const editTask = (id, value) => {
       if (value.trim().length > 0) {
       const updatedTodos = todos.map((todo) => 
-        todo.id === id ? { ...todo, task: value.charAt(0).toUpperCase() + value.slice(1), isEditing: !todo.isEditing } : todo
+        todo.id === id ? { ...todo, task: value.charAt(0).toUpperCase() + value.slice(1) } : todo
       );
       setTodos(updatedTodos);
-      localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      setEditingTodo(null);
 
       } else {
         alert("Enter a Valid Task");
@@ -87,12 +86,17 @@ const TodoWrapper = () => {
       <div className='todoWrapper'>
           <h1>Get Things Done!</h1>
           <TodoForm addTodo={addTodo}/>
-          {todos.map((todo) => todo.isEditing ? (
-            <TodoEditForm key={todo.id} todo={todo} editTask={editTask}/>) 
-            : (
+          {todos.map((todo) => (
             <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} editForm={editForm} toggleComplete={toggleComplete}/>)
           )}
       </div>
+      {editingTodo && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <TodoEditForm todo={editingTodo} editTask={editTask} onCancel={() => setEditingTodo(null)} />
+          </div>
+        </div>
+      )}
       <div className="mode-switch" onClick={modeSwitch}>
         Dark Mode
       </div>
